@@ -1,0 +1,18 @@
+<p *ngIf="gameStatus === Status.FINALIZED" class="game-over">
+  Game Over!!
+</p>
+<div *ngIf="gameStatus === Status.LOADED && currentPlayer">
+  <span class="turn">
+    <app-shape-circle  *ngIf="currentPlayer.shape === Shape.CIRCLE"
+                       [style.width.em]="1"
+                       [style.height.em]="1"
+                       [color]="currentPlayer.color">
+    </app-shape-circle>
+    <app-shape-close *ngIf="currentPlayer.shape === Shape.CLOSE"
+                     [style.width.em]="1"
+                     [style.height.em]="1"
+                     [color]="currentPlayer.color">
+    </app-shape-close>
+  </span>
+  <span> Turn</span>
+</div>

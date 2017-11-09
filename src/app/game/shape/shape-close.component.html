@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+      x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512">
+    <g>
+      <line [@step1]="animated ? 'animated' : 'default'"
+            (@step1.start)="emitAnimationStarted($event)"
+            [style.stroke]="color"
+            class="line" x1="0" y1="50%" x2="100%" y2="50%" stroke-width="80"/>
+      <line [@step2]="animated ? 'animated' : 'default'"
+            (@step2.done)="emitAnimationEnded($event)"
+            [style.stroke]="color"
+            class="line" x1="50%" y1="0" x2="50%" y2="100%" stroke-width="80"/>
+    </g>
+</svg>

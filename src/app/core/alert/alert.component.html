@@ -1,0 +1,6 @@
+<div *ngIf="alert"
+     [@alert]="'default'"
+     [class]="typeClass"
+     role="alert">
+  <small [innerHTML]="alert.message"></small>
+</div>

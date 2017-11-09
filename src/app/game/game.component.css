@@ -1,0 +1,5 @@
+.grid-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}

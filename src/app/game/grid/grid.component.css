@@ -1,0 +1,24 @@
+table {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+.table td, .table th {
+  padding: 0;
+  border: 0;
+}
+
+.overlay {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 8em solid #f8f9fa;
+  display: block;
+}

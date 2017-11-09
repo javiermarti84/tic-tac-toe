@@ -1,0 +1,14 @@
+<button [class.active]="active"
+        type="button"
+        class="btn align-middle">
+  <app-shape-circle  *ngIf="player.shape === Shape.CIRCLE"
+                     [style.width.em]="1.5"
+                     [style.height.em]="1.5"
+                     [color]="player.color">
+  </app-shape-circle>
+  <app-shape-close *ngIf="player.shape === Shape.CLOSE"
+                   [style.width.em]="1.5"
+                   [style.height.em]="1.5"
+                   [color]="player.color">
+  </app-shape-close>
+</button>

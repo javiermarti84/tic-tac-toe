@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="card-header text-light bg-primary">
+    <h1>Tic Tac Toe</h1>
+  </div>
+  <div class="card-body px-0 bg-light">
+
+    <div class="row">
+      <div class="col col-sm-12 text-center">
+
+        <div *ngIf="!game" class="alert alert-info" role="alert">
+          The game is loading.
+        </div>
+
+        <div *ngIf="game">
+
+          <div class="row">
+            <div class="col col-sm-12 mt-2 mb-2 text-center align-middle">
+              <app-player [player]="game.player1" [active]="game.player1 === game.getCurrentPlayer()"></app-player>
+              <app-player [player]="game.player2" [active]="game.player2 === game.getCurrentPlayer()"></app-player>
+            </div>
+          </div>
+
+          <div class="row" *ngIf="game">
+            <div class="col col-sm-12 mt-2 mb-2 text-center">
+              <app-message [currentPlayer]="game.getTurn().getValue()"
+                           [gameStatus]="game.status.getValue()"></app-message>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="grid-wrapper text-center">
+                <app-grid [rows]="game.rows"
+                          [gameStatus]="game.status.getValue()"
+                          (clickOnCell)="clickOnCell($event)"
+                          (cellAnimationStarted)="cellAnimationStarted($event)"
+                          (cellAnimationEnded)="cellAnimationEnded($event)"
+                          (gridAnimationEnded)="gridAnimationEnded($event)">
+                </app-grid>
+                <app-result *ngIf="game.result && game.status.getValue() == Status.FINALIZED"
+                            [result]="game.result"></app-result>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-footer text-muted">
+    <button (click)="resetGame()"
+            type="button" class="btn btn-secondary">
+      Restart Game
+    </button>
+  </div>
+</div>

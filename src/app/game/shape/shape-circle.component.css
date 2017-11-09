@@ -1,0 +1,30 @@
+:host {
+  position: relative;
+  display: inline-block;
+  /*vertical-align: initial;*/
+}
+
+.group {
+  position: relative;
+}
+
+svg {
+  position: relative;
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  fill: transparent;
+}
+
+.animation {
+  stroke: #f8f9fa;
+  stroke-width: 120;
+  -moz-transform-origin: 256px 256px;
+  -ms-transform-origin:  256px 256px;
+  -o-transform-origin: 256px 256px;
+  -webkit-transform-origin:  256px 256px;
+  transform-origin: 256px 256px;
+}

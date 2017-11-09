@@ -1,0 +1,112 @@
+<div *ngIf="result" class="result-wrapper">
+
+  <div class="result ">
+
+    <div class="bg bg-light" [@bg]="bgBoxStatus"></div>
+
+    <div *ngIf="result.draw"
+         [@draw]="'intro'" class="draw align-middle">
+      <app-shape-circle [style.width.em]="5"
+                        [style.height.em]="5"
+                        [color]="result.player1.color">
+      </app-shape-circle>
+      <app-shape-close  [style.width.em]="5"
+                        [style.height.em]="5"
+                        [color]="result.player2.color">
+      </app-shape-close>
+      <p>DRAW!</p>
+    </div>
+
+    <ng-container *ngIf="!result.draw">
+
+      <div class="shapes">
+        <div class="wrapper">
+          <ng-container *ngFor="let coordenate of result.rule.coordinates; let i = index">
+            <div [@shape]="shapeStatus"
+                 [class]="'shape x_' + coordenate.x + ' y_' + coordenate.y">
+              <app-shape-circle *ngIf="result.winner.shape === Shape.CIRCLE"
+                                [style.width.em]="3"
+                                [style.height.em]="3"
+                                [color]="result.winner.color">
+              </app-shape-circle>
+              <app-shape-close  *ngIf="result.winner.shape === Shape.CLOSE"
+                                [style.width.em]="3"
+                                [style.height.em]="3"
+                                [color]="result.winner.color">
+              </app-shape-close>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="lines" [style.background-color]="result.winner.color">
+        <div *ngIf="result.rule.code == 'rule1'"
+             [@line-h]="lineStatus"
+             (@line-h.start)="lineAnimationStarted($event)"
+             (@line-h.done)="lineAnimationEnded($event)"
+             class="line h h-1">
+        </div>
+        <div *ngIf="result.rule.code == 'rule8'"
+             [@line-h]="lineStatus"
+             (@line-h.start)="lineAnimationStarted($event)"
+             (@line-h.done)="lineAnimationEnded($event)"
+             class="line h h-2">
+        </div>
+        <div *ngIf="result.rule.code == 'rule6'"
+             [@line-h]="lineStatus"
+             (@line-h.start)="lineAnimationStarted($event)"
+             (@line-h.done)="lineAnimationEnded($event)"
+             class="line h h-3">
+        </div>
+        <div *ngIf="result.rule.code == 'rule2'"
+             [@line-v]="lineStatus"
+             (@line-v.start)="lineAnimationStarted($event)"
+             (@line-v.done)="lineAnimationEnded($event)"
+             class="line v v-1">
+        </div>
+        <div *ngIf="result.rule.code == 'rule7'"
+             [@line-v]="lineStatus"
+             (@line-v.start)="lineAnimationStarted($event)"
+             (@line-v.done)="lineAnimationEnded($event)"
+             class="line v v-2">
+        </div>
+        <div *ngIf="result.rule.code == 'rule4'"
+             [@line-v]="lineStatus"
+             (@line-v.start)="lineAnimationStarted($event)"
+             (@line-v.done)="lineAnimationEnded($event)"
+             class="line v v-3">
+        </div>
+        <div *ngIf="result.rule.code == 'rule3'"
+             [@line-d-1]="lineStatus"
+             (@line-d-1.start)="lineAnimationStarted($event)"
+             (@line-d-1.done)="lineAnimationEnded($event)"
+             class="line d d-1">
+        </div>
+        <div *ngIf="result.rule.code == 'rule5'"
+             [@line-d-2]="lineStatus"
+             (@line-d-2.start)="lineAnimationStarted($event)"
+             (@line-d-2.done)="lineAnimationEnded($event)"
+             class="line d d-2">
+        </div>
+      </div>
+
+      <div class="info" [@info]="infoStatus">
+        <div class="wrapper">
+          <app-shape-circle *ngIf="result.winner.shape === Shape.CIRCLE"
+                                [style.width.em]="3"
+                                [style.height.em]="3"
+                                [color]="result.winner.color">
+          </app-shape-circle>
+          <app-shape-close  *ngIf="result.winner.shape === Shape.CLOSE"
+                                [style.width.em]="3"
+                                [style.height.em]="3"
+                                [color]="result.winner.color">
+          </app-shape-close>
+          <p>WINNER!</p>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </div>
+</div>

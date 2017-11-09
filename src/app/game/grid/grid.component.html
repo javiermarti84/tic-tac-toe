@@ -1,0 +1,18 @@
+<table class="table">
+  <tbody>
+    <tr *ngFor="let row of rows; let y = index">
+      <td *ngFor="let cell of row; let x = index">
+        <app-cell [cell]="cell"
+                  (clickOnCell)="emitCellOnClick($event)"
+                  (animationStarted)="emitCellAnimationStarted($event)"
+                  (animationEnded)="emitCellAnimationEnded($event)">
+        </app-cell>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div [@overlay]="overlayState"
+     (@overlay.done)="emitGridAnimationEnded($event)"
+     class="overlay">
+</div>
+

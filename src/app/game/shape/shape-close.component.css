@@ -1,0 +1,28 @@
+:host {
+  position: relative;
+  display: inline-block;
+  /*vertical-align: middle;*/
+}
+
+.group {
+  position: relative;
+}
+
+svg {
+  position: relative;
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  overflow: hidden;
+  vertical-align: middle;
+}

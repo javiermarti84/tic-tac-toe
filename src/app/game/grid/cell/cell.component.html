@@ -1,0 +1,27 @@
+<div class="btn-wrapper"
+     [class.vertical]="cell.y === 1"
+     [class.horizontal]="cell.x === 1"
+  >
+  <button (click)="onClick()"
+          [disabled]="cell.player"
+          [class.hidden]="!cell.visibility"
+          [attr.title]="cell.player ? cell.player.name : null">
+      <app-shape-circle  *ngIf="cell.player && cell.player.shape === Shape.CIRCLE"
+          [style.width.em]="3"
+          [style.height.em]="3"
+          [color]="cell.player.color"
+          [animated]="true"
+          (animationStarted)="emitAnimationStarted($event)"
+          (animationEnded)="emitAnimationEnded($event)">
+      </app-shape-circle>
+      <app-shape-close *ngIf="cell.player && cell.player.shape === Shape.CLOSE"
+          [style.width.em]="3"
+          [style.height.em]="3"
+          [color]="cell.player.color"
+          [animated]="true"
+          (animationStarted)="emitAnimationStarted($event)"
+          (animationEnded)="emitAnimationEnded($event)">
+      </app-shape-close>
+  </button>
+</div>
+

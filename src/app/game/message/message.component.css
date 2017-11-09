@@ -1,0 +1,10 @@
+span.turn {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+p {
+  margin-bottom: 0.1rem;
+}
