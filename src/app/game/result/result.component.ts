@@ -12,7 +12,7 @@ import { Shape } from '../../core/shared/enum/shape';
       state('hide', style({ opacity: 0 })),
       state('intro', style({ opacity: 1 })),
       transition('* => intro', [
-        animate('400ms 0ms linear')
+        animate('250ms 0ms linear')
       ]),
     ]),
     trigger('draw', [

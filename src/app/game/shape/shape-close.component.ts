@@ -10,7 +10,7 @@ import { style, state, keyframes, animate, transition, trigger } from '@angular/
       state('default', style({})),
       state('animated', style({transform: 'translateX(0)'})),
       transition('void => animated', [
-        animate('250ms 0ms linear', keyframes([
+        animate('200ms 0ms linear', keyframes([
           style({transform: 'translateX(-100%)', offset: 0 }),
           style({transform: 'translateX(0)', offset: 1.0 })
         ]))
@@ -20,7 +20,7 @@ import { style, state, keyframes, animate, transition, trigger } from '@angular/
       state('default', style({})),
       state('animated', style({ transform: 'translateY(0);' })),
       transition('void => animated', [
-        animate('500ms 0ms linear', keyframes([
+        animate('400ms 0ms linear', keyframes([
           style({transform: 'translateY(-100%)', offset: 0 }),
           style({transform: 'translateY(-100%)', offset: 0.5 }),
           style({transform: 'translateY(0)', offset: 1.0 })

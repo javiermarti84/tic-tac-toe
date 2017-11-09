@@ -9,7 +9,7 @@ import { style, state, keyframes, animate, transition, trigger } from '@angular/
     trigger('step1', [
       state('animated', style({opacity: 0, transform: 'rotateZ(-180deg)'})),
       transition('void => animated', [
-        animate('250ms 0ms linear', keyframes([
+        animate('200ms 0ms linear', keyframes([
           style({opacity: 1, transform: 'rotateZ(0deg)', offset: 0 }),
           style({opacity: 1, transform: 'rotateZ(-180deg)', offset: 0.9 }),
           style({opacity: 0, offset: 1.0 }),
@@ -19,7 +19,7 @@ import { style, state, keyframes, animate, transition, trigger } from '@angular/
     trigger('step2', [
       state('animated', style({opacity: 0, transform: 'rotateZ(-180deg)'})),
       transition('void => animated', [
-        animate('500ms 0ms linear', keyframes([
+        animate('400ms 0ms linear', keyframes([
           style({opacity: 1, transform: 'rotateZ(0deg)', offset: 0.50 }),
           style({opacity: 1, transform: 'rotateZ(-180deg)', offset: 0.9 }),
           style({opacity: 0, offset: 1.0 }),
